@@ -6,7 +6,7 @@ To check out the project, run:
 
 ```bash
 layer clone https://github.com/layerml/examples
-cd examples/Layer-House-Prices-custom_loss
+cd examples/custom-keras-loss-function
 ```
 
 To run the project:
