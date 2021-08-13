@@ -15,7 +15,8 @@ A classification example with `sklearn.RandomForestClassifier` for predicting th
 To check out the Layer Titanic Survival example, run:
 
 ```bash
-layer init titanic
+layer clone https://github.com/layerml/examples
+cd examples/titanic/
 ```
 
 To run the project:
