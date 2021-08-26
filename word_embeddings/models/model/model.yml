@@ -11,7 +11,7 @@ description: "Word embedding model"
 
 training:
   name: word_embedding_model_training
-  description: "glove_Word Embeddings"
+  description: "Glove word embeddings training"
 
   # The source model definition file with a `train_model` method
   entrypoint: model.py

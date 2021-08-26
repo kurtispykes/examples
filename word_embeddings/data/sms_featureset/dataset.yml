@@ -13,7 +13,7 @@ features:
     source: is_spam/feature.py
     environment: is_spam/requirements.txt
   - name: message
-    description: "Lemmatized messages"
+    description: "Messages"
     source: message/feature.py
     environment: message/requirements.txt
 
@@ -22,5 +22,4 @@ schema:
   # together.
   primary_keys: ["id"]
 
-materializations:
-  - target: layer
+

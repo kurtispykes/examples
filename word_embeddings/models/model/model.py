@@ -9,14 +9,14 @@ from layer import Featureset, Train
 from sklearn.model_selection import train_test_split
 import wget
 import zipfile
-
+from  tensorflow import keras
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.layers import Embedding, LSTM, Dense, Bidirectional,GlobalAveragePooling1D,Dropout
+from tensorflow.keras.layers import Embedding, Dense,GlobalAveragePooling1D,Dropout
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.callbacks import EarlyStopping, TensorBoard
-
+from tensorflow.keras.callbacks import EarlyStopping
 import numpy as np
+
 def train_model(train: Train, pf: Featureset("word_embedding_featureset")) -> Any:
     """Model train function
     This function is a reserved function and will be called by Layer
@@ -48,15 +48,21 @@ def train_model(train: Train, pf: Featureset("word_embedding_featureset")) -> An
 
     vocab_size = 1000
     oov_token = "<OOV>"
-    max_length = 100
-    padding_type = "post"
-    truncation_type = "post"
+
     tokenizer = Tokenizer(num_words=vocab_size, oov_token=oov_token)
     tokenizer.fit_on_texts(X_train)
-    word_index = tokenizer.word_index
 
     X_train_sequences = tokenizer.texts_to_sequences(X_train)
     X_test_sequences = tokenizer.texts_to_sequences(X_test)
+
+    max_length = 100
+    padding_type = "post"
+    truncation_type = "post"
+
+    X_train_padded = pad_sequences(X_train_sequences, maxlen=max_length, padding=padding_type,
+                                   truncating=truncation_type)
+    X_test_padded = pad_sequences(X_test_sequences, maxlen=max_length,
+                                  padding=padding_type, truncating=truncation_type)
 
 
     url = 'http://nlp.stanford.edu/data/glove.6B.zip'
@@ -64,17 +70,19 @@ def train_model(train: Train, pf: Featureset("word_embedding_featureset")) -> An
 
     with zipfile.ZipFile(filename, 'r') as zip_ref:
         zip_ref.extractall('glove')
+
+    word_index = tokenizer.word_index
+
     embeddings_index = {}
     f = open('glove/glove.6B.100d.txt')
-
     for line in f:
         values = line.split()
         word = values[0]
         coefs = np.asarray(values[1:], dtype='float32')
         embeddings_index[word] = coefs
     f.close()
-    embedding_matrix = np.zeros((len(word_index) + 1, max_length))
 
+    embedding_matrix = np.zeros((len(word_index) + 1, max_length))
     for word, i in word_index.items():
         embedding_vector = embeddings_index.get(word)
         if embedding_vector is not None:
@@ -86,10 +94,7 @@ def train_model(train: Train, pf: Featureset("word_embedding_featureset")) -> An
                                 weights=[embedding_matrix],
                                 input_length=max_length,
                                 trainable=False)
-    X_train_padded = pad_sequences(X_train_sequences, maxlen=max_length, padding=padding_type,
-                                   truncating=truncation_type)
-    X_test_padded = pad_sequences(X_test_sequences, maxlen=max_length,
-                                  padding=padding_type, truncating=truncation_type)
+
 
     model = Sequential([
         embedding_layer,
@@ -98,7 +103,9 @@ def train_model(train: Train, pf: Featureset("word_embedding_featureset")) -> An
         Dropout(0.2),
         Dense(1, activation='sigmoid')
     ])
-    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+    model.compile(optimizer='adam',
+                                 loss=keras.losses.BinaryCrossentropy(from_logits=True),
+                                 metrics=[keras.metrics.BinaryAccuracy()])
 
     callbacks = [
         EarlyStopping(patience=10),
