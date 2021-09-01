@@ -1,8 +1,0 @@
-# Spam Detection Project Example
-#
-# Project configuration file
-
-apiVersion: 1
-
-# Name of your project
-name: "Spam Detection Hugging Face"
