@@ -1,0 +1,24 @@
+apiVersion: 1
+
+type: featureset
+
+name: "hugging_features"
+description: "SMS sms_features extracted from the labeled sms messages"
+
+features:
+  - name: is_spam
+    description: "Target label"
+    source: is_spam/is_spam.py
+    environment: is_spam/requirements.txt
+  - name: message
+    description: "Processing messages"
+    source: message/message.py
+    environment: message/requirements.txt
+
+schema:
+  # All of the sms_features above should include this primary key. It will be used to join the sms_features
+  # together.
+  primary_keys: ["id"]
+
+materializations:
+  - target: layer

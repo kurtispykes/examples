@@ -1,0 +1,16 @@
+# Titanic Survival Project Example
+#
+# Project configuration file
+
+apiVersion: 1
+
+# Name of your project
+name: "Titanic Survival Project"
+
+# Add integrations to your project. Credentials for these integrations is saved in
+# Layer Cloud.
+integrations:
+  # Name of the integration.
+  # You will be referring to this integration with this unique name
+  layer_demo_snowflake:
+    type: snowflake

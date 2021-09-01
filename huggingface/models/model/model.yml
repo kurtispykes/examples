@@ -1,0 +1,15 @@
+apiVersion: 1
+
+# Name and description of our model
+name: "hugging_face_model"
+description: "My Predictor"
+
+training:
+  name: hugging_face_model_training
+  description: "Hugging Face Model Training"
+
+  # The source model definition file with a `train_model` method
+  entrypoint: model.py
+
+  # File includes the required python libraries with their correct versions
+  environment: requirements.txt
