@@ -6,11 +6,11 @@
 apiVersion: 1
 
 # Name and description of our model
-name: "ct_pet_model"
+name: "cat_dog_classification"
 description: "Image classification model"
 
 training:
-  name: ct_pet_model_training
+  name: cat_dog_classificationl_training
   description: "Model Training"
 
   # The source model definition file with a `train_model` method

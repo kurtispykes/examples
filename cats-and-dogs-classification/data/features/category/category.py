@@ -5,7 +5,7 @@ import numpy as np
 
 def build_feature(sdf: Dataset("cats-and-dogs-classification")) -> Any:
     df = sdf.to_pandas()
-    df = df.sample(1500, random_state=1)
+    df = df.sample(1000, random_state=1)
     df = df[df['path'] != 'single_prediction']
     filenames = list(df['path'])
     categories = []
