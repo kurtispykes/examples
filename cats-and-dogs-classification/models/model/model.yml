@@ -10,7 +10,7 @@ name: "cat_dog_classification"
 description: "Image classification model"
 
 training:
-  name: cat_dog_classificationl_training
+  name: cat_dog_classification_training
   description: "Model Training"
 
   # The source model definition file with a `train_model` method
