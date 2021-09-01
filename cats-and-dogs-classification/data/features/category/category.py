@@ -3,7 +3,7 @@ from layer import Dataset
 import numpy as np
 
 
-def build_feature(sdf: Dataset("catsdogs")) -> Any:
+def build_feature(sdf: Dataset("cats-and-dogs-classification")) -> Any:
     df = sdf.to_pandas()
     df = df.sample(1500, random_state=1)
     df = df[df['path'] != 'single_prediction']

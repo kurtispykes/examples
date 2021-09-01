@@ -1,8 +1,8 @@
-# Cat dOG Project Example
+# New Project Example
 #
 # Project configuration file
 
 apiVersion: 1
 
 # Name of your project
-name: "Cat Dog Detection Hugging Face"
+name: "Word Embeddings"

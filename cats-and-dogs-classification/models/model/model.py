@@ -18,8 +18,8 @@ from keras.layers import Dense, Conv2D, MaxPooling2D, Flatten, Dropout
 from keras.preprocessing.image import ImageDataGenerator
 
 
-def train_model(train: Train, ds:Dataset("catsdogs"), pf: Featureset("cd_pet_features")) -> Any:
-    # train: Train, df:Dataset("catsdogs"), pf: Featureset("animal_features")
+def train_model(train: Train, ds:Dataset("cats-and-dogs-classification"), pf: Featureset("cd_pet_features")) -> Any:
+    # train: Train, df:Dataset("cats-and-dogs-classification"), pf: Featureset("animal_features")
     """Model train function
     This function is a reserved function and will be called by Layer
     when we want this model to be trained along with the parameters.

@@ -1,8 +1,8 @@
-# New Project Example
+# Cat Dog Project Example
 #
 # Project configuration file
 
 apiVersion: 1
 
 # Name of your project
-name: "My Project"
+name: "Cats and Dogs Classification"
