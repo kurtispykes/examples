@@ -7,5 +7,5 @@ schema:
   primary_keys: ["id"]
 materializations:
   - type: table
-    target: layer
+    target: layer-public-datasets
     table_name: "house_prices_train"

@@ -9,5 +9,5 @@ type: source
 
 materializations:
   - type: table
-    target: layer
+    target: layer-public-datasets
     table_name: "spam_messages"
