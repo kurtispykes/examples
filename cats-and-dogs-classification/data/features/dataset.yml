@@ -19,4 +19,4 @@ schema:
   primary_keys: ["id"]
 
 materializations:
-  - target: layer
+  - target: layer-public-datasets

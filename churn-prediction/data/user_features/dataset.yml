@@ -56,4 +56,4 @@ schema:
   primary_keys: ["userId"]
 
 materializations:
-  - target: layer
+  - target: layer-public-datasets

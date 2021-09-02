@@ -12,5 +12,5 @@ schema:
 
 materializations:
   - type: table
-    target: layer
+    target: layer-public-datasets
     table_name: "dataset"

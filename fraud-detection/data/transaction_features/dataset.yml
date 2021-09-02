@@ -44,4 +44,4 @@ schema:
   primary_keys: ["transactionId"]
 
 materializations:
-  - target: layer
+  - target: layer-public-datasets
