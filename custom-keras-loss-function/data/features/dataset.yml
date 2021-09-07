@@ -40,11 +40,6 @@ features:
     description: "BedroomAbvGr"
     source: BedroomAbvGr.py
     environment: requirements.txt
-    
-  
-schema:
-  # All of the features above should include this primary key. It will be used to join the features
-  # together.
-  primary_keys: ["Id"]
 
-materializations: []
+materialization:
+    target: layer-public-datasets

@@ -11,10 +11,6 @@ apiVersion: 1
 name: "titanic"
 type: source
 
-schema:
-  primary_keys: ["PassengerId"]
-
-materializations:
-  - type: table
+materialization:
     target: layer-public-datasets
     table_name: "titanic"

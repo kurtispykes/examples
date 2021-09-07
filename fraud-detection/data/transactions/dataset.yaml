@@ -12,7 +12,6 @@ apiVersion: 1
 name: "transactions"
 type: source
 
-materializations:
-  - type: table
+materialization:
     target: layer-public-datasets
     table_name: "transactions_log"

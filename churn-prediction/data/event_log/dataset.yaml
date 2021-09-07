@@ -10,7 +10,6 @@ apiVersion: 1
 name: "events"
 type: source
 
-materializations:
-  - type: table
+materialization:
     target: layer-public-datasets
     table_name: "event_log"

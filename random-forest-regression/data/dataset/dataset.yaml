@@ -3,9 +3,7 @@ apiVersion: 1
 # refer to this dataset
 name: "house_prices_train"
 type: source
-schema:
-  primary_keys: ["id"]
-materializations:
-  - type: table
+
+materialization:
     target: layer-public-datasets
     table_name: "house_prices_train"

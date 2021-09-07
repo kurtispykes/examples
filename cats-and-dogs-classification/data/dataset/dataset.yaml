@@ -7,10 +7,6 @@ apiVersion: 1
 name: "catsdogs"
 type: source
 
-schema:
-  primary_keys: []
-
-materializations:
-  - type: table
+materialization:
     target: layer-public-datasets
     table_name: "catsdogs"

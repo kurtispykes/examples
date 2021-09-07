@@ -49,11 +49,5 @@ features:
     description: "Churn flag of users (1= Churned, 0= Not)"
     source: is_churned.sql
 
-
-schema:
-  # All of the features above should include this primary key. It will be used to join the features
-  # together.
-  primary_keys: ["userId"]
-
-materializations:
-  - target: layer-public-datasets
+materialization:
+    target: layer-public-datasets
