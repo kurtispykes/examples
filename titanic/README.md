@@ -39,12 +39,12 @@ layer run
 │   │   ├── sex.sql				# Sex of the passenger
 │   │   ├── survived.sql 			# Survived or not
 │   │   ├── title.sql				# Title of the passenger
-│   │   └── dataset.yml				# Declares the metadata of the features above
+│   │   └── dataset.yaml				# Declares the metadata of the features above
 │   └── titanic_data
-│       └── dataset.yml				# Declares where our source `titanic` dataset is
+│       └── dataset.yaml				# Declares where our source `titanic` dataset is
 ├── models
 │   └── survival_model
-│       ├── model.yml				# Training directives of our model
+│       ├── model.yaml				# Training directives of our model
 │       ├── model.py				# Source code of the `Survival` model
 │       └── requirements.txt		        # Environment config file
 └── README.md

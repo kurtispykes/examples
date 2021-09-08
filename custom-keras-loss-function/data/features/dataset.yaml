@@ -1,6 +1,6 @@
 # New Project Example
 #
-# Any directory includes an `dataset.yml` will be treated as a dataset
+# Any directory includes an `dataset.yaml` will be treated as a dataset
 # project. In this `yaml` file, we will define the attributes of our
 # featureset.
 
@@ -12,13 +12,13 @@ name: "house_features"
 description: "House features"
 
 features:
-  - name: SalePrice
+  - name: sale_price
     description: "Sale Price"
-    source: SalePrice.py
+    source: sale_price.py
     environment: requirements.txt
-  - name: PoolArea
+  - name: pool_area
     description: "Pool Area"
-    source: PoolArea.py
+    source: pool_area.py
     environment: requirements.txt
   - name: MoSold
     description: "MoSold"

@@ -1,6 +1,6 @@
 # Churn Prediction Example
 #
-# Any directory that includes a `dataset.yml` will be treated as a dataset
+# Any directory that includes a `dataset.yaml` will be treated as a dataset
 # project. In this `yaml` file, we define the attributes of our
 # featureset.
 

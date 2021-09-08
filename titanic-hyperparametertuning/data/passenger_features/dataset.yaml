@@ -1,6 +1,6 @@
 # Titanic Survival Project Example
 #
-# Any directory includes an `dataset.yml` will be treated as a dataset
+# Any directory includes an `dataset.yaml` will be treated as a dataset
 # project. In this `yaml` file, we will define the attributes of our
 # featureset.
 
@@ -31,7 +31,7 @@ features:
     description: "Extracts the title of the pasennger from their name (`Zabour, Miss. Hileni` > `Miss`)"
     source: title.sql
   - name: survived
-    description: "Whether the passenger survived or not."
+    description: "Whether the user survived or not."
     source: survived.sql
 
 materialization:

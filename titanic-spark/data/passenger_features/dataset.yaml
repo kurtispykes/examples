@@ -1,6 +1,6 @@
 # Titanic Survival Project Example
 #
-# Any directory includes an `dataset.yml` will be treated as a dataset
+# Any directory includes an `dataset.yaml` will be treated as a dataset
 # project. In this `yaml` file, we will define the attributes of our
 # featureset.
 
