@@ -11,11 +11,39 @@ pip install layer-sdk
 
 Clone this  natural language processing with Layer project:
 ```
-layer clone https://github.com/layerml/word_embeddings
+layer clone https://github.com/layerml/examples.git
 ```
 Change into the word embeddings folder run the project:
 ```
-cd word_embeddings
+cd examples/nlp-word-embeddings
 layer start
+
+```
+## File Structure
+
+```yaml
+.
+|____.layer
+| |____project.yaml
+|____models
+| |____model
+| | |____model.yaml
+| | |____requirements.txt
+| | |____model.py
+|____README.md
+|____data
+| |____spam_data
+| | |____dataset.yaml
+| |____sms_featureset
+| | |____message
+| | | |____requirements.txt
+| | | |____feature.py
+| | |____dataset.yaml
+| | |____is_spam
+| | | |____requirements.txt
+| | | |____feature.py
+|____notebooks
+| |____spam.ipynb
+
 
 ```

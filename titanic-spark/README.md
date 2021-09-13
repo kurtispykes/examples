@@ -14,13 +14,14 @@ A classification example with `Spark ML` for predicting the survivals of the Tit
 To check out the Layer Titanic Survival example, run:
 
 ```bash
-layer init titanic
+layer clone https://github.com/layerml/examples
+cd examples/titanic-spark
 ```
 
 To run the project:
 
 ```bash
-layer run
+layer start
 ```
 
 ## File Structure

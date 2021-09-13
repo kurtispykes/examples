@@ -22,7 +22,7 @@ cd examples/titanic/
 To run the project:
 
 ```bash
-layer run
+layer start
 ```
 
 ## File Structure
