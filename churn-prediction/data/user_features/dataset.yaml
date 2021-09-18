@@ -1,0 +1,53 @@
+# Churn Prediction Example
+#
+# Any directory that includes a `dataset.yaml` will be treated as a dataset
+# project. In this `yaml` file, we define the attributes of our
+# featureset.
+
+apiVersion: 1
+
+type: featureset
+
+name: "user_features"
+description: "User features extracted from event logs"
+
+features:
+  - name: gender
+    description: "Gender of the users (1= Female, 0= Male)"
+    source: gender.sql
+  - name: count_login
+    description: "Login counts in the last 7 and 30 days"
+    source: count_login.sql
+    aggregations:
+      - method: "sum"
+        windows: [ "7d", "30d" ]
+  - name: count_help_view
+    description: "Help page views in the last 1, 7 and 30 days"
+    source: count_help_view.sql
+    aggregations:
+      - method: "sum"
+        windows: [ "1d", "7d", "30d" ]
+  - name: count_error
+    description: "Errors in the last 1, 7 and 30 days"
+    source: count_error.sql
+    aggregations:
+      - method: "sum"
+        windows: [ "1d", "7d", "30d" ]
+  - name: count_thumbsup
+    description: "Thumbs up counts in the last 14 days"
+    source: count_thumbs_up.sql
+    aggregations:
+      - method: "sum"
+        windows: [ "14d"]
+  - name: count_thumbsdown
+    description: "Thumbs down counts in the last 14 days"
+    source: count_thumbs_down.sql
+    aggregations:
+      - method: "sum"
+        windows: [ "14d"]
+  - name: is_churned
+    description: "Churn flag of users (1= Churned, 0= Not)"
+    source: is_churned.sql
+
+materialization:
+    target: layer-public-datasets

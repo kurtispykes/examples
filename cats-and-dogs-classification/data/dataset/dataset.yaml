@@ -1,15 +1,12 @@
-# Churn Prediction Project Example
-#
-# In this file, we will integrate a source table from the Layer Demo
-# Snowflake database.
+# New Project Example
 
 apiVersion: 1
 
 # Unique name of this dataset which will be used in this project to
 # refer to this dataset
-name: "events"
+name: "catsdogs"
 type: source
 
 materialization:
     target: layer-public-datasets
-    table_name: "event_log"
+    table_name: "catsdogs"

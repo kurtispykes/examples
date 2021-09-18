@@ -17,13 +17,14 @@ For experimentation tracking, we will use the area under the precision-recall cu
 To check out the Layer Fraud Detection example, run:
 
 ```bash
-layer init fraud-detection
+layer clone https://github.com/layerml/examples.git
+cd examples/fraud-detection
 ```
 
 To run the project:
 
 ```bash
-layer run
+layer start
 ```
 
 ## File Structure

@@ -20,16 +20,18 @@ Login to Layer:
 layer login
 ```
 
-Init Layer in this directory:
+To check out the Layer Titanic Survival example, run:
 
+```bash
+layer clone https://github.com/layerml/examples
+cd examples/titanic/hyperparametertuning
 ```
-layer init
-```
+
 
 And, now you are ready to run the project:
 
 ```
-$ layer run
+$ layer start
 
 Layer v0.18.1
 Found 1 featureset + 1 model + 0 tests = 2 entities in total

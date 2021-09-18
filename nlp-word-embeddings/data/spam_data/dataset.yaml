@@ -1,15 +1,12 @@
-# Churn Prediction Project Example
-#
-# In this file, we will integrate a source table from the Layer Demo
-# Snowflake database.
+# Spam Detection Project Example
 
 apiVersion: 1
 
 # Unique name of this dataset which will be used in this project to
 # refer to this dataset
-name: "events"
+name: "spam_messages"
 type: source
 
 materialization:
     target: layer-public-datasets
-    table_name: "event_log"
+    table_name: "spam_messages"

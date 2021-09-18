@@ -1,0 +1,21 @@
+# Spam Detection Project Example
+
+apiVersion: 1
+
+type: featureset
+
+name: "sms_featureset"
+description: "SMS features extracted from the labeled sms messages"
+
+features:
+  - name: is_spam
+    description: "Target label"
+    source: is_spam/feature.py
+    environment: is_spam/requirements.txt
+  - name: message
+    description: "Lemmatized messages"
+    source: message/feature.py
+    environment: message/requirements.txt
+
+materialization:
+    target: layer-public-datasets

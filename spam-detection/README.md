@@ -13,13 +13,14 @@ An NLP example with `nltk` library to predict the spam SMS messages. In this pro
 To check out the Layer Spam Detection example, run:
 
 ```bash
-layer init spam-detection
+layer clone https://github.com/layerml/examples.git
+cd examples/spam-detection
 ```
 
 To run the project:
 
 ```bash
-layer run
+layer start
 ```
 
 ## File Structure
